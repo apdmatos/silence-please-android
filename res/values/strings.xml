@@ -4,5 +4,21 @@
     <string name="app_name">Silence Please</string>
     <string name="action_settings">Settings</string>
     <string name="decibels">Decibels</string>
+    <string name="title_activity_about_developer">AboutDeveloperActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="name">Name</string>
+    <string name="bithdate">Date of Birth</string>
+    <string name="email">Email</string>
+    <string name="linkedin">Linkedin</string>
+    <string name="about_application">About the application</string>
+    <string name="about_description">
+        How many times have you been at a situation where there is too much noise in a room? 
 
+		\n\n How many times have you had to ask for silence?
+
+
+		\n\n This useless application was asked for a friend, and will solve your problems asking everyone for silence for you!
+	</string>
+	<string name="about_developer">About the developer</string>
+    
 </resources>

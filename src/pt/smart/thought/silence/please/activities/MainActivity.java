@@ -1,24 +1,25 @@
 package pt.smart.thought.silence.please.activities;
 
 import java.util.Random;
-
 import pt.smart.thought.silence.please.DecibelMeasure;
 import pt.smart.thought.silence.please.IDecibelListener;
 import pt.smart.thought.silence.please.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements IDecibelListener {
 
 	private DecibelMeasure decibelMeasure;
 	private MediaPlayer[] mediaPlayers;
+	private SilencePleaseApplication application;
 	
 	// represents the date, until the sound is locked
 	private long soundLockedUntil;
-	private static final int LOCK_TIME_MARGIN = 3000;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,8 @@ public class MainActivity extends Activity implements IDecibelListener {
 				MediaPlayer.create(this, R.raw.fuckingshutup),
 				MediaPlayer.create(this, R.raw.quietsound)
 		};
+		
+		application = ((SilencePleaseApplication) getApplication());
 	}
 
 	@Override
@@ -41,6 +44,23 @@ public class MainActivity extends Activity implements IDecibelListener {
 		return true;
 	}
 	
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    	
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_aboutDeveloper:
+                openDeveloperScreen();
+                return true;
+            case R.id.action_settings:
+                openSettings();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    	
+    }
+
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -59,8 +79,12 @@ public class MainActivity extends Activity implements IDecibelListener {
 		TextView textView = (TextView)findViewById(R.id.decibels);
 		textView.setText(text);
 		
-		// TODO: configure this value
-		if(decibel > 60) {
+		if(application.isShutupEnabled() == false) {
+			// shutup sound is not enabled... do nothing
+			return;
+		}
+		
+		if(decibel > application.getNumberOfDecibelsAllowed()) {
 			// check if we can play another sound
 			long currentTime = System.currentTimeMillis();
 			if(currentTime > soundLockedUntil) {
@@ -69,10 +93,20 @@ public class MainActivity extends Activity implements IDecibelListener {
 				
 				soundLockedUntil = System.currentTimeMillis() 
 						+ mediaPlayers[index].getDuration()
-						+ LOCK_TIME_MARGIN;
+						+ application.getWaitTime();
 				
 				mediaPlayers[index].start();
 			}
 		}
+	}
+	
+	private void openSettings() {
+		Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+	}
+
+	private void openDeveloperScreen() {
+		Intent intent = new Intent(this, AboutDeveloperActivity.class);
+        startActivity(intent);
 	}
 }

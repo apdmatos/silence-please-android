@@ -1,0 +1,26 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="enable_shutup"
+        android:summary="@string/pref_enable_shutup"
+        android:title="@string/pref_title_enable_shutup" />
+
+    <EditTextPreference
+        android:key="maxDecibels"
+	    android:title="@string/pref_title_nr_decibels"
+	    android:summary="@string/pref_nr_decibels"
+	    android:numeric="integer"
+	    android:maxLength="3"
+	    android:defaultValue="80" />
+	
+    <ListPreference
+        android:defaultValue="2"
+        android:entries="@array/pref_shutup_delay_titles"
+        android:entryValues="@array/pref_shutup_delay_values"
+        android:key="shutupdelay"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_shutup_delay" />
+
+</PreferenceScreen>

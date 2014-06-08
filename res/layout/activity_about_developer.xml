@@ -1,0 +1,139 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+		    android:layout_height="match_parent"
+        >
+
+            <ImageView
+                android:id="@+id/developerImage"
+                android:layout_width="@dimen/developer_image_width"
+                android:layout_height="@dimen/developer_image_height"
+                android:src="@drawable/developer"
+                android:adjustViewBounds="true" 
+                android:contentDescription="the developer"
+            />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/developerImage"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp" 
+            >
+
+                <TextView
+                    android:id="@+id/developerNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+				<View
+				    android:layout_width="fill_parent"
+				    android:layout_height="1dp"
+				    android:background="@android:color/darker_gray" />
+                
+                <TextView
+                    android:id="@+id/developerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="André Matos" />
+                
+            </LinearLayout>
+            
+            
+             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/developerImage"
+                android:paddingTop="10dp" 
+            >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bithdate"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+				<View
+				    android:layout_width="fill_parent"
+				    android:layout_height="1dp"
+				    android:background="@android:color/darker_gray" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6/11/1986" />
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/email"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+				<View
+				    android:layout_width="fill_parent"
+				    android:layout_height="1dp"
+				    android:background="@android:color/darker_gray" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="apdmatos@gmail.com"
+                    android:autoLink="email" />
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/linkedin"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+				<View
+				    android:layout_width="fill_parent"
+				    android:layout_height="1dp"
+				    android:background="@android:color/darker_gray" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="http://pt.linkedin.com/in/apdmatos/"
+                    android:linksClickable="true"
+                    android:autoLink="web" />
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/about_application"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+				<View
+				    android:layout_width="fill_parent"
+				    android:layout_height="1dp"
+				    android:background="@android:color/darker_gray" />
+                <TextView
+				    android:gravity="left"
+				    android:layout_height="fill_parent"
+				    android:layout_width="wrap_content"
+				    android:maxLines="10"
+				    android:text="@string/about_description">
+                </TextView>
+                
+            </LinearLayout>
+            
+        </RelativeLayout>
+    </ScrollView>
+    
+</LinearLayout>

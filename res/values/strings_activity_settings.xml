@@ -1,0 +1,25 @@
+<resources>
+
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_title_enable_shutup">Enable shutup madam</string>
+    <string name="pref_enable_shutup">If this is enabled a Madam appears asking people to shutup</string>
+    <string name="pref_title_nr_decibels">Number of decibels allowed</string>
+    <string name="pref_nr_decibels">The number of decibels allowed. If they are exceeded the Madam asks for silence</string>
+    <string name="pref_title_shutup_delay">Wait time before ask for silence</string>
+
+    <string-array name="pref_shutup_delay_titles">
+        <item>1 second</item>
+        <item>2 seconds</item>
+        <item>3 seconds</item>
+        <item>4 seconds</item>
+        <item>5 seconds</item>
+    </string-array>
+    <string-array name="pref_shutup_delay_values">
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+    </string-array>
+    
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="decibel_text_size">300dp</dimen>
+    <dimen name="decibel_label_text_size">60dp</dimen>
+	<dimen name="developer_image_width">200dp</dimen>
+	<dimen name="developer_image_height">200dp</dimen>    
+</resources>
