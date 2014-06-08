@@ -15,7 +15,7 @@
 	    android:defaultValue="80" />
 	
     <ListPreference
-        android:defaultValue="2"
+        android:defaultValue="3000"
         android:entries="@array/pref_shutup_delay_titles"
         android:entryValues="@array/pref_shutup_delay_values"
         android:key="shutupdelay"
